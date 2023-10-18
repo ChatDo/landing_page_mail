@@ -1,7 +1,9 @@
 const sendMail = require('./src/mailer.js');
+const cors = require('cors');
 const fastify = require('fastify')({
-    logger: false
+    logger: false,
 })
+
 // TODO: SETUP EXPRESS SERVER AND DATABASE
 
 fastify.get('/send', function (req, res) {

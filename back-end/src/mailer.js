@@ -30,15 +30,13 @@ function sendMail(req, res) {
             </h1>
             <h1>Informations du prospect</h1>
             <ul>
-                <li><h3>Nom: ${req.params.nom}</h3></li>
-                <li><h3>Prénom: ${req.params.prenom}</h3></li>
-                <li><h3>Adresse: ${req.params.adresse}</h3></li>
-                <li><h3>Code postal: ${req.params.codePostal}</h3></li>
-                <li><h3>Ville: ${req.params.ville}</h3></li>
-                <li><h3>Téléphone: ${req.params.telephone}</h3></li>
-                <li><h3>Email: ${req.params.email}</h3></li>
-                <li><h3>Structure: ${req.params.structure}</h3></li>
-                <li><h3>Commentaire: ${req.params.comments}</h3></li>
+                <li><h3>Nom: ${req.body.nom}</h3></li>
+                <li><h3>Prénom: ${req.body.prenom}</h3></li>
+                <li><h3>Code postal: ${req.body.codePostal}</h3></li>
+                <li><h3>Téléphone: ${req.body.telephone}</h3></li>
+                <li><h3>Email: ${req.body.email}</h3></li>
+                <li><h3>Structure: ${req.body.structure}</h3></li>
+                <li><h3>Commentaire: ${req.body.comments}</h3></li>
             </ul>
             `,
     };
