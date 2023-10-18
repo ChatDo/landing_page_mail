@@ -3,8 +3,8 @@
 </script>
 
 <template>
-    <section class="p-6 ">
-        <form novalidate="" class=" w-full max-w-3xl p-8 mx-auto space-y-6 rounded-md shadow ">
+    <section class="pt-20 bg-gray-100 pb-20 ">
+        <form class="w-full max-w-3xl p-8 mx-auto space-y-6 rounded-md shadow-xl ">
             <h2 class="w-full text-3xl font-bold leadi">Faites vos réservations !</h2>
             <div>
                 <label for="name" class="block mb-1 ml-1">Nom</label>
