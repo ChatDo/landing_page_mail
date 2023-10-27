@@ -52,7 +52,7 @@
 </template>
 
 <script>
-const HOST = "http://localhost:5551";
+const HOST = "http://localhost:3000";
 export default {
     methods: {
         sendMail() {

@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "vite serve --host",
+    "start": "npm run build && serve -s dist -l 8080",
+    "lint": "vite lint"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.15",
