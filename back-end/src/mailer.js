@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer");
 const pass = "M\@tc0m97438";
 
 const transporter = nodemailer.createTransport({
-    host: "mail.chatdo.me",
+    host: "mail.chatdo.software",
     secure: false,
     auth: {
         user: "matcom@chatdo.software",
@@ -13,18 +13,20 @@ const transporter = nodemailer.createTransport({
 
 function sendMail(req, res) {
     // TODO: SECURE WITH TOKEN
-
     let dest = req.params.dest
     if (dest === undefined || dest === "") {
         console.log("No destination");
         dest = "nicolas.julie38@gmail.com";
     }
-    const mailOptions = {
-        from: "LOCATION STRUCTURE<matcom@chatdo.software>",
-        to: dest,
-        subject: "LOCATION STRUCTURE: NOUVEAU PROSPECT", // email subject
-        // TODO: ADD HTML TEMPLATE
-        html: `
+    try {
+
+        // TODO: FIX MAIL SERVER
+        const mailOptions = {
+            from: "LOCATION STRUCTURE<matcom@chatdo.software>",
+            to: dest,
+            subject: "LOCATION STRUCTURE: NOUVEAU PROSPECT", // email subject
+            // TODO: ADD HTML TEMPLATE
+            html: `
             <h1>
                 Vous avez une nouvelle demande de location !
             </h1>
@@ -39,14 +41,18 @@ function sendMail(req, res) {
                 <li><h3>Commentaire: ${req.body.comments}</h3></li>
             </ul>
             `,
-    };
+        };
+        return transporter.sendMail(mailOptions, (erro, info) => {
+            if (erro) {
+                return res.send("ERROR: " + erro.toString());
+            }
+            return res.send(`Sent to ${dest}`);
+        });
+    } catch (e) {
+        console.log(e);
+    }
+
     // returning result
-    return transporter.sendMail(mailOptions, (erro, info) => {
-        if (erro) {
-            return res.send("ERROR: " + erro.toString());
-        }
-        return res.send(`Sent to ${dest}`);
-    });
 }
 
 module.exports = sendMail;
