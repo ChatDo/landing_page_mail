@@ -57,13 +57,6 @@ const HOST = "http://localhost:3000";
 export default {
     methods: {
         sendMail() {
-          // console.log(this.$refs.nameInput.value)
-          // console.log(this.$refs.firstnameInput.value)
-          // console.log(this.$refs.postalcodeInput.value)
-          // console.log(this.$refs.phoneInput.value)
-          // console.log(this.$refs.emailInput.value)
-          // console.log(this.$refs.structureInput.value)
-          // console.log(this.$refs.commInput.value)
             fetch(`${HOST}/send`, {
                 method: "POST",
                 headers: {
