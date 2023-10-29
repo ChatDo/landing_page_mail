@@ -1,17 +1,18 @@
 <template>
-
-  <div class="overflow-hidden bg-gray-100 py-32">
-    <img src="../assets/back.jpeg" style="filter: blur(3px);
+    <!--  TODO: FIX BLUR ON ALL DIV -->
+  <div class="overflow-hidden bg-gray-100 py-32" style="
       height: 100%;
-    z-index: 0;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);" alt="fond"/>
-    <div class="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
+      background-image: url('/src/assets/back.jpeg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      /*filter: blur(5px);*/
+      /*-webkit-filter: blur(5px);*/
+      /*-moz-filter: blur(5px);*/
+      /*-o-filter: blur(5px);*/
+      /*-ms-filter: blur(5px);*/
+">
+    <div class="mx-auto max-w-7xl px-6 lg:flex lg:px-8" >
       <div
           class="mx-auto grid z-10 max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
         <div class="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
@@ -23,7 +24,7 @@
             Faites nous confiance, et réservez dès maintenant !
           </p>
           <div class="mt-10 flex">
-            <a href="#"
+            <a href="#contact"
                class="rounded-md bg-purple-700 px-6 py-4 text-lg font-semibold text-white
            shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2
            focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
