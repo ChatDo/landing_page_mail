@@ -8,37 +8,38 @@
             <h2 class="w-full text-3xl font-bold leadi">Faites vos réservations !</h2>
             <div>
                 <label for="name" class="block mb-1 ml-1">Nom</label>
-                <input id="name" type="text" placeholder="Nom" required=""
+                <input id="name" ref="nameInput" type="text" placeholder="Nom" required=""
                        class="block w-full p-2 rounded focus:outline-none focus:ring focus:ri focus:ri dark:bg-gray-800 text-white">
             </div>
             <div>
                 <label for="name" class="block mb-1 ml-1">Prénom</label>
-                <input id="name" type="text" placeholder="Prénom" required=""
+                <input id="name" ref="firstnameInput" type="text" placeholder="Prénom" required=""
                        class="block w-full p-2 rounded focus:outline-none focus:ring focus:ri focus:ri dark:bg-gray-800 text-white">
             </div>
             <div>
                 <label for="email" class="block mb-1 ml-1">Code postal</label>
-                <input id="email" type="number" placeholder="Code postal" required=""
+                <input id="email" ref="postalcodeInput" type="number" placeholder="Code postal" required=""
                        class="block w-full p-2 rounded focus:outline-none focus:ring focus:ri focus:ri dark:bg-gray-800 text-white">
             </div>
             <div>
                 <label for="email" class="block mb-1 ml-1">Téléphone</label>
-                <input id="email" type="number" placeholder="Téléphone" required=""
+                <input id="email" ref="phoneInput" type="number" placeholder="Téléphone" required=""
                        class="block w-full p-2 rounded focus:outline-none focus:ring focus:ri focus:ri dark:bg-gray-800 text-white">
             </div>
             <div>
                 <label for="email" class="block mb-1 ml-1">Email</label>
-                <input id="email" type="email" placeholder="Email" required=""
+                <input id="email" ref="emailInput" type="email" placeholder="Email" required=""
                        class="block w-full p-2 rounded focus:outline-none focus:ring focus:ri focus:ri dark:bg-gray-800 text-white">
             </div>
             <div>
+                <!--              TODO: CHANGE TO DROPDOWN WITH AVAILABLE STRUCTURES             -->
                 <label for="email" class="block mb-1 ml-1">Structure</label>
-                <input id="email" type="email" placeholder="Structure" required=""
+                <input id="email" ref="structureInput" type="email" placeholder="Structure" required=""
                        class="block w-full p-2 rounded focus:outline-none focus:ring focus:ri focus:ri dark:bg-gray-800 text-white">
             </div>
             <div>
                 <label for="message" class="block mb-1 ml-1">Commentaires</label>
-                <textarea id="message" type="text" placeholder="Date, temps de location..."
+                <textarea id="message" ref="commInput" type="text" placeholder="Date, temps de location..."
                           class="block w-full p-2 rounded autoexpand focus:outline-none focus:ring focus:ri focus:ri dark:bg-gray-800 text-white"></textarea>
             </div>
             <div>
@@ -56,20 +57,26 @@ const HOST = "http://localhost:3000";
 export default {
     methods: {
         sendMail() {
+          // console.log(this.$refs.nameInput.value)
+          // console.log(this.$refs.firstnameInput.value)
+          // console.log(this.$refs.postalcodeInput.value)
+          // console.log(this.$refs.phoneInput.value)
+          // console.log(this.$refs.emailInput.value)
+          // console.log(this.$refs.structureInput.value)
+          // console.log(this.$refs.commInput.value)
             fetch(`${HOST}/send`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    nom: "test",
-                    prenom: "test",
-                    adresse: "test",
-                    codePostal: "test",
-                    telephone: "test",
-                    email: "test",
-                    structure: "test",
-                    comments: "test",
+                    nom: this.$refs.nameInput.value,
+                    prénom: this.$refs.firstnameInput.value,
+                    codePostal: this.$refs.postalcodeInput.value,
+                    telephone: this.$refs.phoneInput.value,
+                    email: this.$refs.emailInput.value,
+                    structure: this.$refs.structureInput.value,
+                    comments: this.$refs.commInput.value,
                 }),
             }).then(async (res) => {
                 console.log(res)
